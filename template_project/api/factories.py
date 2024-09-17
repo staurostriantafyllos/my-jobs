@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 
 from template_project.api.cache import initialise_cache
 from template_project.api.exceptions import EntityNotFoundException
-from template_project.api.routers import accounts, system
+from template_project.api.routers import accounts, jobs, system
 from template_project.config import APISettings
 
 
@@ -51,6 +51,7 @@ def create_api_application() -> FastAPI:
     # include routers here
     app.include_router(system.router)
     app.include_router(accounts.router)
+    app.include_router(jobs.router)
 
     app.add_exception_handler(
         EntityNotFoundException, entity_not_found_exception_handler
