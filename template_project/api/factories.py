@@ -37,7 +37,12 @@ def create_api_application() -> FastAPI:
         docs_url = None
         redoc_url = None
 
-    app = FastAPI(lifespan=lifespan, docs_url=docs_url, redoc_url=redoc_url)
+    app = FastAPI(
+        title=api_config.TITLE,
+        lifespan=lifespan,
+        docs_url=docs_url,
+        redoc_url=redoc_url,
+    )
 
     app.add_middleware(
         CORSMiddleware,

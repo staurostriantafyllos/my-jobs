@@ -30,6 +30,7 @@ class APISettings(BaseSettings):
     ORIGINS: list[str]
     ORIGIN_REGEX: str | None = None
     DOCS_ENABLED: bool = True
+    TITLE: str
 
 
 class SecretAPISettings(SecretBaseSettings):
