@@ -30,3 +30,9 @@ class UserPublic(UserBase):
 
 class TokenResponse(SQLModel):
     access_token: str
+
+
+class JobBase(SQLModel):
+    company_name: str
+    job_title: str
+    salary: float = Field(ge=0)
